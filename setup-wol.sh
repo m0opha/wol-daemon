@@ -77,14 +77,13 @@ while [[ "$#" -gt 0 ]]; do
         --interface|-i)
             shift
             interface="$1"
-            echo "$interface"
             ;;
         --run|-r)
-            setup_wol "$1"
+            setup_wol $interface
             exit 0
             ;;
         --install|-I)
-            install "$1"
+            install $interface
             ;;
         --uninstall|-ui)
             uninstall
