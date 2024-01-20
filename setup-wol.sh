@@ -11,8 +11,8 @@ Description=Auto activate WOL service.
 
 [Service]
 Type=simple
-ExecStart=$bash_path $script_path/setup-wol.sh $network_interface
-ExecStop=$bash_path $script_path/setup-wol.sh $network_interface
+ExecStart=$bash_path $script_path/setup-wol.sh  --interface $network_interface --run
+ExecStop=$bash_path $script_path/setup-wol.sh --interface $network_interface --run
 
 [Install]
 WantedBy=default.target
