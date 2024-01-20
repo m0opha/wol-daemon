@@ -26,6 +26,8 @@ install() {
     local script_path="/usr/local/bin"
 
     sudo cp ./setup-wol.sh $script_path/
+    echo 'setup-wol.sh copied at: /usr/local/bin'
+
     genservice $network_interface
 
     sudo systemctl daemon-reload
@@ -39,7 +41,9 @@ uninstall() {
     sudo systemctl stop setup-wol.service
 
     sudo rm /etc/systemd/system/setup-wol.service
+    echo "removed /etc/systemd/system/setup-wol.service"
     sudo rm /usr/local/bin/setup-wol.sh
+    echo "removed /usr/local/bin/setup-wol.sh"
 
     sudo systemctl daemon-reload
     echo "Uninstallation complete."
