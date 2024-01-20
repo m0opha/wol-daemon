@@ -25,7 +25,7 @@ install() {
     local network_interface="$1"
     local script_path="/usr/local/bin"
 
-    sudo cp setup-wol.sh $script_path/
+    sudo cp ./setup-wol.sh $script_path/
     genservice $network_interface
 
     sudo systemctl daemon-reload
