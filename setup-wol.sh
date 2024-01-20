@@ -77,6 +77,7 @@ while [[ "$#" -gt 0 ]]; do
         --interface|-i)
             shift
             interface="$1"
+            echo "$interface"
             ;;
         --run|-r)
             setup_wol "$1"
